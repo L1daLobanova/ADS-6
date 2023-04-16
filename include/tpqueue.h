@@ -13,6 +13,7 @@ class TPQueue {
   void push(const T & value) {
     if (count == size)
       throw std::string("FULL!");
+    ++count;
     int mesto = last;
     //находим нужную позицию
     for (int i = first; i < last; i++)
