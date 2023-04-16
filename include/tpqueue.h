@@ -7,15 +7,16 @@ template<typename T, int size>
 class TPQueue {
   T arr[size];
   int first, last, count;
+
  public:
-  TPQueue(): first(0), last(0), count(0) {};
-  void push (const T & value) {
+  TPQueue(): first(0), last(0), count(0) {}
+  void push(const T & value) {
     if (count == size)
       throw std::string("FULL!");
     int mesto = last;
     //находим нужную позицию
     for (int i = first; i < last; i++)
-      if (arr[i].prior < value.prior){
+      if (arr[i].prior < value.prior) {
         mesto = i;
         break;
       }
@@ -34,7 +35,6 @@ class TPQueue {
       return arr[first++ % size];
     }
   }
-      
 };
 
 struct SYM {
